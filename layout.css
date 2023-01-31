@@ -1,0 +1,9 @@
+*{
+    box-sizing: border-box;
+    
+}
+.grid_1-1-1-1{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
