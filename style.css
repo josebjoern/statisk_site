@@ -1,30 +1,51 @@
+
 .mainNav h1 span {
     display: inline-block;
     transform: scaleX(-1) translateX(-0.2rem);
-    color: rgb(84, 202, 24);
+    color: rgb(61, 215, 115);
 }
 h1{
-    font-size: 60px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 90px;
     text-align: center;
+    color: rgb(13, 54, 40);
 }
 nav{
     text-align: center;
 
 }
-
+p, h2, h3, button, select, li{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+img{
+    width: 100%;
+}
+.produkt_billede{
+    width: 90%;
+}
 h2{
     font-size: 40px;
+}
+h3{
+    font-size: 20px;
+}
+h4{
+    font-size: 30px;
+}
+dt{
+font-size: 25px;
+font-weight: bolder;
 }
 a{
     color: inherit;
     font-size: 20px;
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration:none;
     text-decoration-color: var(--text-decoration-color);
     -webkit-text-decoration-color: var(--text-decoration-color);
     border-radius: 5px;
     text-underline-offset: 2px;
-    text-decoration-thickness: 2px;
+    
 
 }
 *{
@@ -36,13 +57,14 @@ a{
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
 }
+
 body {
     padding: 20px;
     margin: calc((100vh / 25) * 1.563) calc((100vw / 25) * 1.563);
     font-weight: 400;
     line-height: 1.563;
     color: var(--color);
-    background-color: var(--background-color);
+    background-color: rgb(233, 245, 227);
     caret-color: var(--caret-color);
 }
 .kategoriliste {
@@ -53,5 +75,84 @@ body {
 .kategoriliste a {
     text-decoration: none;
     padding: 2em;
-    background-color: rgb(208, 245, 209);
+    background-color: rgb(164, 206, 175);
+}
+
+.grid_1-1-1-1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 2rem;
+}
+.grid_1-1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+.discounted p:last-child {
+    background: rgb(242, 220, 91);
+    font-weight: bold;
+    font-size: 30px;
+    padding: 0.5rem;
+    margin-right: 10rem;
+
+}
+.produkt_soldout::before {
+    content: "Sold Out";
+    position: absolute;
+    background: rgb(255, 250, 250);
+    color: rgb(62, 55, 28);
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+ol, ul {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 1.563rem;
+}
+
+.breadcrumbs {
+    display: flex;
+    font-size: 0.8rem;
+    list-style-type: none;
+}
+.breadcrumbs li::after {
+    content: " > ";
+    font-size: 0.6rem;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 10px;
+    transition: all 0.3s;
+}
+.purchaseBox {
+    background: #d8d8d8;
+    color: black;
+    padding: 7rem;
+}
+.purchaseBox button {
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+    font-size: 25px;
+    border-radius: 20px;
+}
+.info{
+    background: #b69c9c;
+    color: black;
+    padding: 7rem;
+}
+select{
+    font-size: 1.5rem;
+    border-radius: 10px;
+    
+}
+@media (min-width: 700px) {
+    .grid_1-1-1-1{
+        display: grid;
+        grid-column: 1fr;
+        grid-row: 1fr 1fr;
+    }
 }
