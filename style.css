@@ -1,0 +1,57 @@
+.mainNav h1 span {
+    display: inline-block;
+    transform: scaleX(-1) translateX(-0.2rem);
+    color: rgb(84, 202, 24);
+}
+h1{
+    font-size: 60px;
+    text-align: center;
+}
+nav{
+    text-align: center;
+
+}
+
+h2{
+    font-size: 40px;
+}
+a{
+    color: inherit;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--text-decoration-color);
+    -webkit-text-decoration-color: var(--text-decoration-color);
+    border-radius: 5px;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    padding: 20px;
+    margin: calc((100vh / 25) * 1.563) calc((100vw / 25) * 1.563);
+    font-weight: 400;
+    line-height: 1.563;
+    color: var(--color);
+    background-color: var(--background-color);
+    caret-color: var(--caret-color);
+}
+.kategoriliste {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+}
+.kategoriliste a {
+    text-decoration: none;
+    padding: 2em;
+    background-color: rgb(208, 245, 209);
+}
