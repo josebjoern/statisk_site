@@ -1,8 +1,57 @@
 
+    header{
+        position:initial;
+        top: 0;
+        padding: 1rem 2rem;
+        margin: 20px;
+        box-shadow: 0 12px 28px 0 rgb(0 0 0 / 30%);
+        display: grid;
+        justify-content: top;
+        align-items: baseline;
+        
+       
+      }
+      header .logo a{
+        font-size: 2rem;
+        display: grid;
+      }
+      
+      header nav ul{
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 30px;
+        overflow-x: auto;
+      }
+      nav {
+        --less-than: 700;
+        --burger-lines: black;
+        --burger-border: var(--primary);
+      }
+      a{
+        text-decoration: solid;
+        font-weight: 700;
+        color: black;
+      
+      }
+      a:hover{
+      color: black;
+      }
+      
+      main {
+        max-width: 1500px;
+        margin-inline: auto;
+        padding-inline: 2rem;
+        margin-block: 3rem;
+      }
+  
 .mainNav h1 span {
     display: inline-block;
     transform: scaleX(-1) translateX(-0.2rem);
     color: rgb(61, 215, 115);
+    
 }
 h1{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -19,9 +68,11 @@ p, h2, h3, button, select, li{
 }
 img{
     width: 100%;
+    
 }
 .produkt_billede{
     width: 90%;
+    border-style:double;
 }
 h2{
     font-size: 40px;
@@ -67,6 +118,28 @@ body {
     background-color: rgb(233, 245, 227);
     caret-color: var(--caret-color);
 }
+.forside{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+.pictures{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    background-color: #8aa27e;
+}
+button{
+    display: block;
+    font-size: 60px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #8aa27e;
+    width: 60%;
+    border-radius: 20px;
+    
+}
 .kategoriliste {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -90,11 +163,12 @@ body {
     grid-template-rows: 1fr;
 }
 .discounted p:last-child {
-    background: rgb(242, 220, 91);
+    background: rgb(242, 91, 91);
     font-weight: bold;
     font-size: 30px;
     padding: 0.5rem;
     margin-right: 10rem;
+    border-style:dashed;
 
 }
 .produkt_soldout::before {
@@ -103,7 +177,7 @@ body {
     background: rgb(255, 250, 250);
     color: rgb(62, 55, 28);
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 4px;
     font-size: 20px;
     font-weight: bold;
 }
@@ -128,20 +202,22 @@ ol, ul {
     transition: all 0.3s;
 }
 .purchaseBox {
-    background: #d8d8d8;
+    background: rgb(233, 245, 227);
     color: black;
     padding: 7rem;
+    
 }
 .purchaseBox button {
     display: block;
+    background-color: #8aa27e;
     margin-top: 1rem;
     width: 100%;
     font-size: 25px;
     border-radius: 20px;
 }
 .info{
-    background: #b69c9c;
-    color: black;
+    background: #8aa27e;
+    color: white;
     padding: 7rem;
 }
 select{
@@ -150,6 +226,14 @@ select{
     
 }
 @media (max-width: 700px) {
+    header nav ul{
+        list-style-type: none;
+        display: block;
+        display: inline-table;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+      }
+    
     .img{
         width: 100%;
     }
@@ -162,5 +246,9 @@ select{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-row: 1fr 1fr 1fr;
+    }
+    .grid_1-1-1-1{
+        display: grid;
+        grid-template-columns: 1fr;
     }
 }
