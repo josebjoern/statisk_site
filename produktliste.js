@@ -1,25 +1,27 @@
-async function hentData(){
-    const response = await fetch("https://kea-alt-del.dk/t7/api/products");
+async function getData(){
+    const response = await fetch("https://kea-alt-del.dk/t7/api/products?limit=10");
     const data = await response.json();
-    //console.log(data);
+    console.log(data);
 
-    data.forEach(showProduct);
+    data.forEach(showProdukt);
 }
 
-hentData();
+getData();
 
-function showProduct(produkt){
+function showProdukt(produkt){
 
-const template = document.querySelector("#produktDiscountTemplate").textContent;
+    console.log(produkt);
+
+const template = document.querySelector("#produktDiscountTemplate").content;
 console.log(template);
 
 const copy = template.cloneNode(true);
 copy.querySelector("h3").textContent = produkt.productdisplayname;
-if(product.soldout){
+if(produkt.soldout){
     copy.querySelector("article").classList.add("soldOut")
 }
-if(product.discount){
-    copy.querySelector("article").classList.add("onSale")
+if(produkt.discount){
+    copy.querySelector("article").classList.add("discounted")
 }
 document.querySelector("main").appendChild(copy);
 }
