@@ -66,9 +66,10 @@ nav{
 p, h2, h3, button, select, li{
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
-img{
-    width: 100%;
-    
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 .produkt_billede{
     width: 90%;
@@ -92,8 +93,6 @@ a{
     font-size: 20px;
     font-weight: bold;
     text-decoration:none;
-    text-decoration-color: var(--text-decoration-color);
-    -webkit-text-decoration-color: var(--text-decoration-color);
     border-radius: 5px;
     text-underline-offset: 2px;
     
@@ -103,10 +102,7 @@ a{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-tap-highlight-color: transparent;
+  
 }
 
 body {
@@ -150,11 +146,11 @@ button{
     padding: 2em;
     background-color: rgb(164, 206, 175);
 }
-/* .grid_1-1-1-1{
+.grid_1-1-1-1{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    gap: 2rem; }*/
+    gap: 2rem; }
 
 
 .grid_1-1{
@@ -162,6 +158,13 @@ button{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
 }
+
+.type{
+   display:flex;
+   gap:10px; 
+}
+    
+
 .discounted p:last-child {
     background: rgb(242, 91, 91);
     font-weight: bold;
@@ -171,16 +174,23 @@ button{
     border-style:dashed;
 
 }
-.produkt_soldout::before {
+.produktliste article.soldOut::before {
     content: "Sold Out";
     position: absolute;
-    background: rgb(255, 250, 250);
-    color: rgb(62, 55, 28);
-    padding: 1rem;
-    border-radius: 4px;
-    font-size: 20px;
+    background: rgb(203, 200, 200);
+    color: rgb(7, 50, 7);
     font-weight: bold;
+    padding: 1rem;
 }
+.produktliste article.soldOut img {
+    opacity: 0.5;
+}
+.produktliste article > * {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+
 ol, ul {
     padding-left: 0;
     margin-top: 0;
@@ -252,4 +262,7 @@ select{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
     }
+}
+.gemt{
+    display: none;
 }

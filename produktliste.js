@@ -1,30 +1,48 @@
-async function getData(){
-    const response = await fetch("https://kea-alt-del.dk/t7/api/products?limit=10");
-    const data = await response.json();
-    console.log(data);
+//const url = `https://kea-alt-del.dk/t7/api/products?limit=10`;
 
-    data.forEach(showProdukt);
+async function getData(){
+    const response = await fetch("https://kea-alt-del.dk/t7/api/products?limit=50");
+    const data = await response.json();
+    data.forEach(showProduct);
+    
 }
+
 
 getData();
 
-function showProdukt(produkt){
+function showProduct(product){
+    console.log(product);
+    
+     const template = document.querySelector("#produkt_skabelon").content;
+     
+     const copy = template.cloneNode(true);
 
-    console.log(produkt);
+     copy.querySelector("h3").textContent = product.productdisplayname;
+     copy.querySelector(".articletype").textContent = product.articletype;
+     copy.querySelector(".brand").textContent = product.brandname;
+     copy.querySelector(".price").textContent = product.price + "DKK";
+    
 
-const template = document.querySelector("#produktDiscountTemplate").content;
-console.log(template);
+     
 
-const copy = template.cloneNode(true);
-copy.querySelector("h3").textContent = produkt.productdisplayname;
-if(produkt.soldout){
-    copy.querySelector("article").classList.add("soldOut")
+
+
+if(product.soldout){
+    copy.querySelector("article").classList.add("soldOut");
 }
-if(produkt.discount){
-    copy.querySelector("article").classList.add("discounted")
+if(product.discount){
+    copy.querySelector("article").classList.add("onSale");
+    copy.querySelector(".discounted p").textContent = Math.round(product.price - (product.price * product.discount /100)) + "DKK";
+    copy.querySelector(".discounted p+p").textContent = product.discount + "%";
+    copy.querySelector(".discounted").classList.remove("gemt");
 }
-document.querySelector("main").appendChild(copy);
-}
+copy.querySelector(".img_produkt").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
+
+document.querySelector("main").appendChild(copy);   
+    }
+
+
+
 
 
 
