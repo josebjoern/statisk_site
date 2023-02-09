@@ -2,10 +2,13 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const cat = urlParams.get("cat");
 
-const filNavn = `https://kea-alt-del.dk/t7/api/products?limit=50&category=${cat}`;
+const filNavn = `https://kea-alt-del.dk/t7/api/products?limit=20&category=${cat}`;
+
+
+
 
 async function getData(){
-    const response = await fetch("https://kea-alt-del.dk/t7/api/products?limit=50");
+    const response = await fetch("https://kea-alt-del.dk/t7/api/products?limit=20");
     const data = await response.json();
     data.forEach(showProduct);
 }
